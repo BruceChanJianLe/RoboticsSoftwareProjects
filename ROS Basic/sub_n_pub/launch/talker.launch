@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="sub_n_pub" name="talker" type="talker"/>
+
+</launch>
