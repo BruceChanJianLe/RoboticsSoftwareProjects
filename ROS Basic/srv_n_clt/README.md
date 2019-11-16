@@ -19,7 +19,7 @@ int64 b
 int64 sum
 ```
 
-# CMakeLists.txt + package.xml - Create your own srv
+# CMakeLists.txt + package.xml - Generate your own srv
 
 1. Create a `srv` folder and define your srv inside
 1. Add dependencies in your `package.xml`

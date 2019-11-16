@@ -56,7 +56,7 @@ add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 ```
 
-# CMakeLists.txt + package.xml - Create your own msg
+# CMakeLists.txt + package.xml - Generate your own msg
 
 1. Create a `msg` folder and define your msg inside
 1. Add dependencies in your `package.xml`
