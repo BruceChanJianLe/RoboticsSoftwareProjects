@@ -2,7 +2,7 @@
 This repo is where robotics projects and some Udacity Robotics projects are kept as a reference for the future.
 
 ## Gazebo
-
+_**7~7.X**_
 This is how to upgrade your Gazebo7 to Gazebo7.X  
 Where X means the latest version of 7  
 All you need to do is just add the repositories and key as described in [link](http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0)  
@@ -19,7 +19,45 @@ And then run the installation command
 To check if you have the latest version of gazebo, run the following command  
 `gazebo --version`
 
-###
+_**7~9**_
+This is how to upgrade your Gazebo7 to Gazebo9  
+First, remove Gazebo7(2 Steps)  
+```
+sudo apt-get remove ros-kinetic-gazebo-*
+ros-kinetic-gazebo-dev
+ros-kinetic-gazebo-msgs
+ros-kinetic-gazebo-plugins
+ros-kinetic-gazebo-ros
+ros-kinetic-gazebo-ros-control
+ros-kinetic-gazebo-ros-pkgs
+```
+The printout
+```
+Removing ros-kinetic-pr2-desktop (1.1.3-0xenial-20191127-173214+0000) ...
+Removing ros-kinetic-desktop-full (1.3.2-0xenial-20191127-163953+0000) ...
+Removing ros-kinetic-simulators (1.3.2-0xenial-20191127-162721+0000) ...
+Removing ros-kinetic-gazebo-ros-pkgs (2.5.19-1xenial-20191119-092329+0000) ...
+Removing ros-kinetic-pr2-simulator (2.0.11-0xenial-20191127-172621+0000) ...
+Removing ros-kinetic-pr2-gazebo (2.0.11-0xenial-20191127-171548+0000) ...
+Removing ros-kinetic-pr2-gazebo-plugins (2.0.11-0xenial-20191119-054928+0000) ...
+Removing ros-kinetic-message-relay (0.0.2-1xenial-20191119-061146+0000) ...
+Removing ros-kinetic-kobuki-gazebo-plugins (0.5.7-0xenial-20191119-054954+0000) ...
+Removing ros-kinetic-gazebo-plugins (2.5.19-1xenial-20191119-053038+0000) ...
+Removing ros-kinetic-gazebo-ros-control (2.5.19-1xenial-20191127-163246+0000) ...
+Removing ros-kinetic-gazebo-ros (2.5.19-1xenial-20191119-053032+0000) ...
+Removing ros-kinetic-gazebo-dev (2.5.19-1xenial-20190607-165824-0800) ...
+Removing ros-kinetic-gazebo-msgs (2.5.19-1xenial-20191119-052225+0000) ...
+```
+Second, remove Gazebo7 manually  
+```
+sudo apt-get remove libgazebo*
+sudo apt-get remove gazebo*
+```
+
+Install Gazebo9
+`sudo apt-get install ros-kinetic-gazebo9*`
+
+That should do the trick.
 
 # Others
 or create a new repository on the command line
