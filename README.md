@@ -58,6 +58,8 @@ Install Gazebo9
 `sudo apt-get install ros-kinetic-gazebo9*`
 
 That should do the trick.
+[Reference1](https://medium.com/@abhiksingla10/setting-up-ros-kinetic-and-gazebo-8-or-9-70f2231af21a)
+[Reference2](https://community.gazebosim.org/t/all-about-gazebo-9-with-ros/187)
 
 # Others
 or create a new repository on the command line
