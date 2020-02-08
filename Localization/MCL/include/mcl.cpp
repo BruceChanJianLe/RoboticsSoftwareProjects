@@ -123,7 +123,7 @@ double Robot::gaussian(double mu, double sigma, double x){
 }
 
 
-double gen_real_number(){
+double gen_real_random(){
     // Generate real random number between 0 and 1
     std::uniform_real_distribution<double> real_dist(0.0, 1.0);
     return real_dist(gen);
