@@ -8,7 +8,10 @@
 #include <vector>
 #include <stdexcept>    // throw errors
 #include <random>
+#include "matplotlibcpp.h"
 
+
+namespace plt = matplotlibcpp;
 
 // Define Landmarks
 double landmarks[8][2] {{20.0, 20.0}, {20.0, 80.0}, {20.0, 50.0},
