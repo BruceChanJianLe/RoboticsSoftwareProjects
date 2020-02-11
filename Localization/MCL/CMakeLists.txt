@@ -51,10 +51,20 @@ add_library(${PROJECT_NAME}_LIB SHARED ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME}_LIB ${PYTHON_LIBRARY})
 
 # Make executable
+
+# main code
 add_executable(${PROJECT_NAME} main.cpp)
+# Resampling learning
+add_executable(Resampling resampling.cpp)
+# Resampling wheel
+add_executable(Resampling_wheel resampling_wheel.cpp)
+# Error Evaluation
+add_executable(Error_evaluation error_eval.cpp)
 
 # Link the executable with my library (which my library is linked to python and numpy library)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${PROJECT_NAME}_LIB)
+target_link_libraries(Resampling_wheel PUBLIC ${PROJECT_NAME}_LIB)
+target_link_libraries(Error_evaluation PUBLIC ${PROJECT_NAME}_LIB)
 
 
 # Please remember that the order of lines matters very much. 
