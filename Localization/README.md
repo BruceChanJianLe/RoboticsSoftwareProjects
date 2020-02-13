@@ -2,13 +2,24 @@
 
 There are many algorithms which can help localize out robot in a known map. Please read more [here](http://robots.stanford.edu/papers/thrun.robust-mcl.pdf) for more information about robot localization.
 
+Generally, there are three localization challenges:
+- Local Localization / Position Tracking: The robot knows its initial pose and estimate its pose as it moves out on the environment.
+- Global Localization: The initial pose of robot is not known, it has to determine its pose relative to the ground truth map.
+- Kidnapped Robot: Similar to global localization, but it may appear suddenly at another position on the map.
+
+Moreover, we should consider whether our environment is **static** or **dynamic**. It is clear that localization in a dynamic world will be harder than that of a static world. Here, I will only deal with static environment localization.
+
 Common localization algorithms:
 - Monte Carlo Localization
 - Extended Kalman Filter
 - Multi-Hypothesis Kalman Filter
 - Markov Localization
+- Grid Localization
 
-Here I will introduce two localization algorithm which is MCL and EKF.  
+Reading Reference:
+- http://www.probabilistic-robotics.org/
+
+Here I shall introduce two localization algorithm which is MCL and EKF.  
 
 Comparison
 ![Imgae](Comparison_MCL_to_EKF.png)
