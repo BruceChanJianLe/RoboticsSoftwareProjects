@@ -19,10 +19,15 @@ Common localization algorithms:
 Reading Reference:
 - http://www.probabilistic-robotics.org/
 
-Here I shall introduce two localization algorithm which is MCL and EKF.  
+Here I shall introduce two localization algorithm which is EKF and MCL.  
 
 Comparison
 ![Imgae](Comparison_MCL_to_EKF.png)
+
+## Kalman Filter
+
+**_Introduction_**
+In short, kalman filter is a continuous iteration of a two step process which are measurement update and state prediction. Kalman filter is used to estimate the state of the system with  noisy measurements.
 
 ## Monte Carlo Localization (MCL)
 
