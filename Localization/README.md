@@ -70,7 +70,7 @@ g++ main.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7 -I /usr/local/lib/p
 ## Reference
 
 **Udacity**  
-Github project. [link](https://github.com/udacity/RoboND-MCL-Lab)  
+MCL Github project. [link](https://github.com/udacity/RoboND-MCL-Lab)  
 
 **CMAKE**  
 Learning more about cmake. [link](https://www.youtube.com/watch?v=_yFPO1ofyF0&list=PLK6MXr8gasrGmIiSuVQXpfFuE1uPT615s&index=1)  
