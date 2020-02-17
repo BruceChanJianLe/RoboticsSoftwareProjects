@@ -29,9 +29,40 @@ Comparison
 **_Introduction_**
 In short, kalman filter is a continuous iteration of a two step process which are measurement update and state prediction. Kalman filter is used to estimate the state of the system with  noisy measurements.
 
+A Gaussian distribution is a probability distribution, which is a continuous function. The probability that a random variable, x, will take a value between x1 and x2 is given by the integral of the function from x1 to x2​. 
+
+![Image](Gaussian_distribution.png)
+
+To understand more about gaussian / normal distribution watch this [link](https://www.youtube.com/watch?v=hgtMWR3TFnY).
+
+Note that kalman filter treats all noise as unimodal Gaussian. In reality, that’s not the case. However, the algorithm is optimal if the noise is Gaussian. The term optimal expresses that the algorithm minimizes the mean square error of the estimated parameters.
+
+**_1D Kalman Filter_**
+
+Variable naming convention:  
+x_t - state at time t  
+z_t - measurement at time t  
+u_t - control at time t  
+
+Step 1:  
+Update measurement, to calculate new mean we can use this formula ![new_mean](New_mean.png) and to calculate new variance we can use this formula ![new_variance](New_variance.png).  
+
+![image](Posterior_belief.png)  
+
+Step 2:  
+State prediction, to calculate the state prediction, we use the formula below.  
+![StatePredictionFormulas.png](StatePredictionFormulas.png)  
+
+Step 3:  
+Loop the process again. With the initial belief, we perform measurement udpate. Follow by, state prediction. Then we start from measurement update again. Use vscode cmake tool extension to run 1DKF and read the code to see how measurement update and state prediction are carried out.  
+
+**_Multivariate Gaussian Kalman Filter_**  
+
+![image](MultiGaussian.png)  
+
 ## Monte Carlo Localization (MCL)
 
-**_Introduction_**
+**_Introduction_**  
 
 MCL is one of the most used localization in the robotics field. It uses particle to represent the belief which has significant advantage over other localization methods. Below are some advantages worth mentioning.
 
