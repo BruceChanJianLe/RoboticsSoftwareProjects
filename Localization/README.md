@@ -40,9 +40,11 @@ Note that kalman filter treats all noise as unimodal Gaussian. In reality, thatâ
 **_1D Kalman Filter_**
 
 Variable naming convention:  
-x_t - state at time t  
-z_t - measurement at time t  
-u_t - control at time t  
+$x_t$ - state at time $t$  
+$z_t$ - measurement at time $t$  
+$u_t$ - control at time $t$  
+
+Formula: $\mu'=(r^2\mu+\sigma^2\mu)/(r^2+\sigma^2)$
 
 Step 1:  
 Update measurement, to calculate new mean we can use this formula ![new_mean](New_mean.png) and to calculate new variance we can use this formula ![new_variance](New_variance.png).  
