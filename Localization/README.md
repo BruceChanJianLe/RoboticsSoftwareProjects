@@ -44,16 +44,17 @@ $x_t$ - state at time $t$
 $z_t$ - measurement at time $t$  
 $u_t$ - control at time $t$  
 
-Formula: $\mu'=(r^2\mu+\sigma^2\mu)/(r^2+\sigma^2)$
+Formula: $\mu'=\frac{(r^2\mu+\sigma^2\mu)}{(r^2+\sigma^2)}$
 
 Step 1:  
-Update measurement, to calculate new mean we can use this formula ![new_mean](New_mean.png) and to calculate new variance we can use this formula ![new_variance](New_variance.png).  
+Update measurement, to calculate new mean we can use this formula $\mu'=\frac{(r^2\mu+\sigma^2\mu)}{(r^2+\sigma^2)}$ and to calculate new variance we can use this formula $\sigma^{2'}=\frac{1}{\frac{1}{r^2}+\frac{1}{\sigma^2}}$.  
 
 ![image](Posterior_belief.png)  
 
 Step 2:  
 State prediction, to calculate the state prediction, we use the formula below.  
-![StatePredictionFormulas.png](StatePredictionFormulas.png)  
+$Posterior Mean \;\;\;\;\; \mu'=\mu_1+\mu_2$  
+$Posterior Variance \;\;\;\;\; \sigma^{2'}=\sigma^2_1+\sigma^2_2$  
 
 Step 3:  
 Loop the process again. With the initial belief, we perform measurement udpate. Follow by, state prediction. Then we start from measurement update again. Use vscode cmake tool extension to run 1DKF and read the code to see how measurement update and state prediction are carried out.  
@@ -61,6 +62,7 @@ Loop the process again. With the initial belief, we perform measurement udpate. 
 **_Multivariate Gaussian Kalman Filter_**  
 
 ![image](MultiGaussian.png)  
+In multivariate 
 
 ## Monte Carlo Localization (MCL)
 
@@ -115,3 +117,5 @@ Although, some changes ought to be done, please reference it to my CMakeLists.tx
 
 **Matplotlibcpp**
 Matplotlibcpp header file is build during a students diploma thesis
+
+_Note that if you cannot view the equation correctly, please do git clone and view with vscode_
