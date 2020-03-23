@@ -62,7 +62,42 @@ Loop the process again. With the initial belief, we perform measurement udpate. 
 **_Multivariate Gaussian Kalman Filter_**  
 
 ![image](MultiGaussian.png)  
-In multivariate 
+Kalman filter can also be extended to the multivariate gaussian assumption. Please look into the sensor fusion course repo for more information.
+
+**_Eigen3 Installation and vscode header linkage method_**
+```sh
+sudo apt-get install libeigen3-dev
+cd /usr/include
+sudo ln -sf eigen3/Eigen Eigen
+sudo ln -sf eigen3/unsupported unsupported
+```
+[link](https://blog.csdn.net/l1216766050/article/details/81431628)
+
+**_Drawback of Kalman Filter_**
+Kalman Assumption
+- Motion and measurement models are linear
+- State space can be represented by a unimodal Gaussian distribution
+
+These assumption are very limited as robots move in circle or cruve which are considered as non linear motion.
+
+Therefore, we need to use Extended Kalman Filter.
+
+**_Extended Kalman Filter_**
+Extended Kalman Filter zoom into the linear part of the non linear transformation. Hence, kalman filter can be used and only good for a small section of the function.
+
+We can centered the best estimate, the mean and update with every step. It turns out that we can produce sufficiently accurate results.
+
+The mean can be continue to be updated with a non linear function. But the covariance must be updated by a linearization of the function f(x).
+
+To calculate the local linear approximation a Taylor series can be of help!
+
+Summary:  
+A nonlinear function can be used to update the mean of a function.  
+$\mu\;\;\;\underrightarrow{f(x)}\;\;\;\mu'$  
+But not the variance, as this would result in a non-Gaussian distribution which is much more computationally expensive to work with. To update the variance, the Extended Kalman Filter linearizes the nonlinear function f(x) over a small section and calls it F. This linearization, F, is then used to update the state's variance.  
+$P\;\;\;\underrightarrow{\;\;F\;\;}\;\;\;P'$  
+The linear approximation can be obtained by using the first two terms of the Taylor Series of the function centered around the mean.  
+$F=f(\mu)+\frac{\delta f(\mu)}{\delta x}(x-\mu)$  
 
 ## Monte Carlo Localization (MCL)
 
@@ -119,3 +154,16 @@ Although, some changes ought to be done, please reference it to my CMakeLists.tx
 Matplotlibcpp header file is build during a students diploma thesis
 
 _Note that if you cannot view the equation correctly, please do git clone and view with vscode_
+
+**Eigen**
+```sh
+sudo apt-get install libeigen3-dev
+cd /usr/include
+sudo ln -sf eigen3/Eigen Eigen
+sudo ln -sf eigen3/unsupported unsupported
+```
+[link](https://blog.csdn.net/l1216766050/article/details/81431628)
+
+**Latex**
+[arrows](https://www.sascha-frank.com/Arrow/latex-arrows.html)
+[latex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
